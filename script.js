@@ -8,6 +8,7 @@ function Book(title, author, cover, pages, status) {
     this.status = status;
 }
 
+/*
 const testBook = {
     title: "The Hobbit",
     author: "JRR Tolkien",
@@ -17,9 +18,12 @@ const testBook = {
 };
 
 myLibrary.push(testBook);
+*/
 
 function populateLibrary() {
     const bookshelf = document.querySelector(".card-container");
+
+    bookshelf.innerHTML = ""; // Clear current books on screen to avoid duplication
     
     myLibrary.forEach((book) => {
 
@@ -39,7 +43,7 @@ function populateLibrary() {
 
 function addBookToLibrary(title, author, cover, pages, status) {
 // Create new book object
-    const newBook = Object.create(book);
+    const newBook = Object.create(Book);
 // Take form inputs and apply them to the book properties
     newBook.title = title;
     newBook.author = author;
@@ -48,31 +52,33 @@ function addBookToLibrary(title, author, cover, pages, status) {
     newBook.status = status;
 // Push the newly recreate book obect to the myLibrary array
     myLibrary.push(newBook);
+    populateLibrary();
 }
-/*
+
 document.getElementById("new-book-form").addEventListener("submit", (event) => {
     event.preventDefault();
-    const title = // Acquire these values from the form inputs
-    const author = //
-    const cover = //
-    const pages = //
-    const status = //
+    const title = document.getElementById("book-title-input").value;
+    const author = document.getElementById("book-author-input").value;
+    const cover = document.getElementById("book-cover-input").value;
+    const pages = document.getElementById("book-pages-input").value;
+    const status = document.getElementById("book-status-input").value;
 
     addBookToLibrary(title, author, cover, pages, status);
-}); */
+    document.getElementById("new-book-modal").style.display = "none"; // Hide modal
+    document.getElementById("new-book-form").reset(); // Clear the form
+});
 
 document.getElementById("new-book-btn").addEventListener("click", (event) => {
-    document.getElementById("new-book-modal").style.display = "block";
+    document.getElementById("new-book-modal").style.display = "block"; // Show modal
 });
 
 document.getElementById("cancel-modal-btn").addEventListener("click", (event) => {
-    document.getElementById("new-book-modal").style.display = "none";
-
-    // THIS SHOULD ALSO ERASE ALL FORM DATA
+    document.getElementById("new-book-modal").style.display = "none"; // Hide modal
+    document.getElementById("new-book-form").reset(); // Clear the form
 });
 
 window.addEventListener("click", (event) => {
     if(event.target === document.getElementById("new-book-modal")) {
-        document.getElementById("new-book-modal").style.display = "none";
+        document.getElementById("new-book-modal").style.display = "none"; // Hide modal
     }
 });

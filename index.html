@@ -19,6 +19,7 @@
     </div>
 
     <div class="card-container">
+        <!-- Dummy book for testing purposes only
         <div class="card">
             <img src="https://4.bp.blogspot.com/-Qm7SYvrAabU/UPYIVCfLCBI/AAAAAAAAEwQ/b5fw-8ItJEY/s1600/Hobbit_75th.jpg"/>
             Title: The Hobbit<br>
@@ -26,6 +27,7 @@
             237 pages<br>
             Status: Read
         </div>
+        -->
     </div>
 </body>
 
@@ -33,20 +35,20 @@
 <div id="new-book-modal" class="modal">
     <div class="modal-content">
         <form id="new-book-form">
-            <label for="book_title">Title</label>
-            <input type="text" id="book_title" required>
+            <label for="book-title-input">Title</label>
+            <input type="text" id="book-title-input" required>
 
-            <label for="book_author">Author</label>
-            <input type="text" id="book_author" required>
+            <label for="book-author-input">Author</label>
+            <input type="text" id="book-author-input" required>
 
-            <label for="book_title">Cover Image URL (optional))</label>
-            <input type="url" id="book_cover">
+            <label for="book-title-input">Cover Image URL (optional))</label>
+            <input type="url" id="book-cover-input">
 
-            <label for="book_pages">Page Count</label>
-            <input type="number" id="book_pages" required>
+            <label for="book-pages-input">Page Count</label>
+            <input type="number" id="book-pages-input" required>
 
-            <label for="book_status">Status</label>
-            <select id="book_status">
+            <label for="book-status-input">Status</label>
+            <select id="book-status-input">
                 <option value="Read">Read</option>
                 <option value="In Progress">In Progress</option>
                 <option value="Unread" selected>Unread</option>
