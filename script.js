@@ -22,16 +22,15 @@ function populateLibrary() {
     const bookshelf = document.querySelector(".card-container");
     
     myLibrary.forEach((book) => {
-        let htmlString = "";
-        htmlString += `<img src='${book.cover}'/>`;
-        htmlString += `Title: ${book.title}<br>`;
-        htmlString += `Author: ${book.author}<br>`;
-        htmlString += `${book.pages} pages<br>`;
-        htmlString += `Status: ${book.status}`;
 
         const newBookDiv = document.createElement("div");
         newBookDiv.className = "card";
-        newBookDiv.innerHTML = htmlString;
+
+        newBookDiv.innerHTML = `<img src='${book.cover}'/>` +
+                               `Title: ${book.title}<br>` +
+                               `Author: ${book.author}<br>` +
+                               `${book.pages} pages<br>` +
+                               `Status: ${book.status}`;
 
         bookshelf.append(newBookDiv);
     });
