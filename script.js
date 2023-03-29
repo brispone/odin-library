@@ -35,3 +35,44 @@ function populateLibrary() {
         bookshelf.append(newBookDiv);
     });
 }
+
+
+function addBookToLibrary(title, author, cover, pages, status) {
+// Create new book object
+    const newBook = Object.create(book);
+// Take form inputs and apply them to the book properties
+    newBook.title = title;
+    newBook.author = author;
+    newBook.cover = cover;
+    newBook.pages = pages;
+    newBook.status = status;
+// Push the newly recreate book obect to the myLibrary arry
+    myLibrary.push(newBook);
+}
+/*
+document.getElementById("new-book-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const title = // Acquire these values from the form inputs
+    const author = //
+    const cover = //
+    const pages = //
+    const status = //
+
+    addBookToLibrary(title, author, cover, pages, status);
+}); */
+
+document.getElementById("new-book-btn").addEventListener("click", (event) => {
+    document.getElementById("new-book-modal").style.display = "block";
+});
+
+document.getElementById("cancel-modal-btn").addEventListener("click", (event) => {
+    document.getElementById("new-book-modal").style.display = "none";
+
+    // THIS SHOULD ALSO ERASE ALL FORM DATA
+});
+
+window.addEventListener("click", (event) => {
+    if(event.target === document.getElementById("new-book-modal")) {
+        document.getElementById("new-book-modal").style.display = "none";
+    }
+});
