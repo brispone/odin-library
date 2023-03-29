@@ -53,6 +53,11 @@ function populateLibrary() {
         //create read/unread button w/ event listener
         const statusIcon = document.createElement("img");
         statusIcon.src = book.status ? './icons/read.svg' : './icons/unread.svg';
+
+        statusIcon.addEventListener("click", (event) => {
+            toggleStatus(event.target.parentNode.parentNode.dataset.index);
+        });
+
         //append button to footer
         cardFooter.append(statusIcon);
         //append footer to card
@@ -79,6 +84,11 @@ function addBookToLibrary(title, author, cover, pages, status) {
 
 function removeFromLibrary(index) {
     myLibrary.splice(index, 1);
+    populateLibrary();
+}
+
+function toggleStatus(index) {
+    myLibrary[index].status = !myLibrary[index].status;
     populateLibrary();
 }
 
