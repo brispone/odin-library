@@ -45,8 +45,8 @@ body {
 .card-container {
     background-color: var(--color-light);
     margin: 20px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 265px);
     box-sizing: border-box;
 }
 
