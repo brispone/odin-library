@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 :root {
     --color-dark: #867070;
     --color-medium: #D5B4B4;
@@ -16,18 +18,26 @@ body {
 .header {
     background-color: var(--color-dark);
     color: var(--color-light);
+    font-family: 'Playfair Display';
+    font-weight: bold;
+    font-size: 40px;
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 50px;
     box-sizing: border-box;
+    box-shadow: 1px 1px 5px black;
 }
 
 .header .button {
     background-color: var(--color-light);
     color: var(--color-dark);
+    font-family: 'Playfair Display';
     font-weight: bold;
+    font-size: 20px;
+    height: 40px;
+    width: 180px;
     border: none;
     border-radius: 10px;
     padding: 5px;
@@ -47,12 +57,18 @@ body {
     margin: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fill, 265px);
+    gap: 30px;
+    padding: 10px;
     box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+    min-height: calc(100vh - 140px);
+    max-height: 100%;
 }
 
 .card-container .card {
     height: 350px;
-    width: 250px;
+    width: 225px;
     margin: 20px;
     padding: 10px;
     background-color: var(--color-lightest);
@@ -62,14 +78,17 @@ body {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    text-align: center;
 }
 
 .card-container .card .cover-img {
     display: block;
     height: 225px;
-    width: 150px;
+    width: 175px;
     align-self: center;
     margin-top: -15px;
+    margin-bottom: 5px;
+    border: 1px solid gray;
 }
 
 .card-container .card .delete-btn {
