@@ -30,7 +30,7 @@ function populateLibrary() {
         const newBookDiv = document.createElement("div");
         newBookDiv.className = "card";
 
-        newBookDiv.innerHTML = `<img src='${book.cover}'/>` +
+        newBookDiv.innerHTML = `<img src='${book.cover ? book.cover : './images/book-cover-placeholder.png'}'/>` +
                                `Title: ${book.title}<br>` +
                                `Author: ${book.author}<br>` +
                                `${book.pages} pages<br>` +
