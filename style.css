@@ -138,7 +138,7 @@ body {
     padding: 20px;
     border: 1px solid var(--color-lightest);
     border-radius: 5px;
-    width: 10%;
+    width: 200px;
     display: flex;
     flex-direction: column;
 }
