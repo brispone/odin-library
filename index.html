@@ -11,7 +11,8 @@
 <body>
     <div class="header">
         <div id="logo">
-            MyLibrary
+            <img src="./icons/library.svg"/>
+            <span>MyLibrary</span>
         </div>
         <div id="button-container">
             <button class="button" id="new-book-btn">Add Book</button>
@@ -20,13 +21,17 @@
 
     <div class="card-container">
         <!-- Dummy book for testing purposes only
-        <div class="card">
-            <img src="https://4.bp.blogspot.com/-Qm7SYvrAabU/UPYIVCfLCBI/AAAAAAAAEwQ/b5fw-8ItJEY/s1600/Hobbit_75th.jpg"/>
-            Title: The Hobbit<br>
-            Author: JRR Tolkien<br>
-            237 pages<br>
-            Status: Read
-        </div>
+            <div class="card" data-index="0">
+                <img class="delete-btn" src="./icons/trashcan.svg">
+                <img class="cover-img" src="./images/book-cover-placeholder.png">
+                "The Hobbit"<br>
+                by<br>
+                JRR Tolkien
+                <div class="card-footer">
+                    <span class="pg-count">364 pages</span>
+                    <img src="./icons/read.svg"/>
+                </div>
+            </div>
         -->
     </div>
 </body>
@@ -34,6 +39,9 @@
 <!-- Modal for adding a new book -->
 <div id="new-book-modal" class="modal">
     <div class="modal-content">
+
+        <button id="cancel-modal-btn">Cancel</button>
+
         <form id="new-book-form">
             <label for="book-title-input">Title</label>
             <input type="text" id="book-title-input" required>
@@ -41,7 +49,7 @@
             <label for="book-author-input">Author</label>
             <input type="text" id="book-author-input" required>
 
-            <label for="book-title-input">Cover Image URL (optional))</label>
+            <label for="book-title-input">Cover Image URL (optional)</label>
             <input type="url" id="book-cover-input">
 
             <label for="book-pages-input">Page Count</label>
@@ -49,15 +57,15 @@
 
             <label for="book-status-input">Status</label>
             <select id="book-status-input">
-                <option value="Read">Read</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Unread" selected>Unread</option>
+                <option value=true>Read</option>
+                <option value=false selected>Unread</option>
             </select>
 
             <button type="submit" form="new-book-form">Add</button>
         </form>
-        <button id="cancel-modal-btn">Cancel</button>
+
     </div>
 </div>
 
 </html>
+
