@@ -9,6 +9,10 @@ html, body {
     margin: 0;
 }
 
+body {
+    background-color: var(--color-medium);
+}
+
 .header {
     background-color: var(--color-dark);
     color: var(--color-light);
@@ -36,4 +40,33 @@ html, body {
 .header button:hover {
     background-color: var(--color-medium);
     transition: 0.2s;
+}
+
+.card-container {
+    background-color: var(--color-light);
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.card-container .card {
+    height: 300px;
+    width: 200px;
+    margin: 20px;
+    padding: 10px;
+    background-color: var(--color-lightest);
+    color: var(--color-dark);
+    font-weight: bold;
+    border: 5px solid var(--color-dark);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container .card img {
+    display: block;
+    height: 225px;
+    width: 150px;
+    align-self: center;
 }
