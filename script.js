@@ -25,16 +25,27 @@ function populateLibrary() {
 
     bookshelf.innerHTML = ""; // Clear current books on screen to avoid duplication
     
-    myLibrary.forEach((book) => {
+    myLibrary.forEach((book, index) => {
 
         const newBookDiv = document.createElement("div");
+        
         newBookDiv.className = "card";
 
-        newBookDiv.innerHTML = `<img src='${book.cover ? book.cover : './images/book-cover-placeholder.png'}'/>` +
+        newBookDiv.innerHTML = `<img class='cover-img' src='${book.cover ? book.cover : './images/book-cover-placeholder.png'}'/>` +
                                `Title: ${book.title}<br>` +
                                `Author: ${book.author}<br>` +
                                `${book.pages} pages<br>` +
                                `Status: ${book.status}`;
+
+        const deleteButton = document.createElement("img");
+        deleteButton.className = 'delete-btn';
+        deleteButton.src = './icons/trashcan.svg';
+        deleteButton.dataset.index = index;
+        deleteButton.addEventListener('click', (event) => {
+            removeFromLibrary(event.target.dataset.index);
+        });
+
+        newBookDiv.prepend(deleteButton);
 
         bookshelf.append(newBookDiv);
     });
@@ -52,6 +63,11 @@ function addBookToLibrary(title, author, cover, pages, status) {
     newBook.status = status;
 // Push the newly recreate book obect to the myLibrary array
     myLibrary.push(newBook);
+    populateLibrary();
+}
+
+function removeFromLibrary(index) {
+    myLibrary.splice(index, 1);
     populateLibrary();
 }
 

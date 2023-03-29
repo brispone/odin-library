@@ -51,8 +51,8 @@ body {
 }
 
 .card-container .card {
-    height: 300px;
-    width: 200px;
+    height: 350px;
+    width: 250px;
     margin: 20px;
     padding: 10px;
     background-color: var(--color-lightest);
@@ -64,11 +64,19 @@ body {
     flex-direction: column;
 }
 
-.card-container .card img {
+.card-container .card .cover-img {
     display: block;
     height: 225px;
     width: 150px;
     align-self: center;
+    margin-top: -15px;
+}
+
+.card-container .card .delete-btn {
+    height: 25px;
+    width: 25px;
+    align-self: self-end;
+    cursor: pointer;
 }
 
 .modal {
