@@ -46,7 +46,7 @@ function addBookToLibrary(title, author, cover, pages, status) {
     newBook.cover = cover;
     newBook.pages = pages;
     newBook.status = status;
-// Push the newly recreate book obect to the myLibrary arry
+// Push the newly recreate book obect to the myLibrary array
     myLibrary.push(newBook);
 }
 /*
