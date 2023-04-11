@@ -1,11 +1,13 @@
 let myLibrary = [];
 
-function Book(title, author, cover, pages, status) {
-    this.title = title;
-    this.author =  author;
-    this.cover = cover;
-    this.pages = pages;
-    this.status = status;
+class Book {
+    constructor(title, author, cover, pages, status) {
+        this.title = title;
+        this.author = author;
+        this.cover = cover;
+        this.pages = pages;
+        this.status = status;
+    }
 }
 
 /*
@@ -70,13 +72,8 @@ function populateLibrary() {
 
 function addBookToLibrary(title, author, cover, pages, status) {
 // Create new book object
-    const newBook = Object.create(Book);
-// Take form inputs and apply them to the book properties
-    newBook.title = title;
-    newBook.author = author;
-    newBook.cover = cover;
-    newBook.pages = pages;
-    newBook.status = status;
+    const newBook = new Book(title, author, cover, pages, status);
+
 // Push the newly recreate book obect to the myLibrary array
     myLibrary.push(newBook);
     populateLibrary();
